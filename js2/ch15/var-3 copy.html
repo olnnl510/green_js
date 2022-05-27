@@ -8,15 +8,21 @@
 </head>
 <body>
     <script>
-        var sum = 10;
-        sum = 20;
+        var x = 10;
 
-        console.log(sum);
+        function displayNumber() {
+            var y;
+            console.log(`x is ${x}`);
+            console.log(`y is ${y}`);
+            y = 20;
+        }
+        displayNumber();
     </script>
 </body>
 </html>
 
-<!--
-var였을때는 2번선언해도 상관x
-let이였을때는 에러. 딱 한번만 선언
+
+
+<!-- 
+    요로케됨!
 -->
