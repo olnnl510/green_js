@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var x = 10;
+
+        function displayNumber() {
+            console.log(`x is ${x}`);
+            console.log(`y is ${y}`);
+            var y = 20;
+        }
+        displayNumber();
+    </script>
+</body>
+</html>
+
+
+
+<!-- 
+    var y; 가 hoisting 되기 때문에 ( 나를 감싸고 있는 중괄호 까지! )
+    y is undefined 까지는 뜸 (not defined x)
+
+    let 변수
+    const 상수
+    둘다 hoisting 안됨
+-->

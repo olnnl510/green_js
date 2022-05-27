@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var userNumber = prompt('숫자를 입력하세요.');
+
+        // userNumver값이 3의 배수이면 알림창(alert)에 "3의 배수입니다."8
+        // 3의 배수가 아니면 알림창에 "3의 배수가 아닙니다."
+
+        if(Number(userNumber) % 3 === 0) {
+            alert('3의 배수입니다.')
+        } else {
+            alert('3의 배수가 아닙니다.')
+        }
+
+    </script>
+</body>
+</html>
+
+<!-- 문자열 -> 숫자로 자동형변환 (더하기 빼고)
+
+- 문자열 -> 숫자로 형변환
+parseInt()는 정수만
+Number()은 숫자 all
+
+parseInt()는 문자열로 된 부분에서 숫자(정수)만 뽑아서 변환해주는것이 특징이고,
+Number()은 문자열 전체가 숫자일때 소수점까지 숫자타입으로 가져올 수 있다는것이다.
+
+- 문자 섞였을때 (1a111)
+parseInt : 1 (문자 섞이기전 앞까지)
+Number : NaN (문자 있기만하면 Not a number) = false로 활동
+
+Nan === 0 false
+Nan == 0 false
+
+-->

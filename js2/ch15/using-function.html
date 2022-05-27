@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Hoisting
+
+        addNumber(10, 20);
+
+        function addNumber(n1, n2) {
+            var sum = n1 + n2;
+            document.write(`결괏값 : ${sum}<br>`);
+            return; // void 함수 (값x)
+        }
+
+        addNumber(1, 2, 5);
+        addNumber(100, 25);
+        
+    </script>
+</body>
+
+</html>
+
+<!--
+함수 : 중복된 작업을 할 때
+
+매개변수로 외부의 값 전달받지 않는다(자체적으로 해결) or 전역변수로 해결하겠다
+
+
+n1 n2 값을 주지 않으면 ? undefined 
+
+
+함수 : 정의 / 호출
+-->

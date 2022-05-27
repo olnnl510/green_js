@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">자바스크립트</h1>
+    <p id="text">위 텍스트를 클릭해 보세요.</p>
+    <script>
+        var heading = document.querySelector('#heading');
+        heading.onclick = function () {
+            heading.style.color = 'red';
+        }
+    </script>
+</body>
+</html>
+
+<!--
+
+    js2 에서는 홑따옴표가 기본
+
+    이벤트 ~ 때 -> 뭐
+    이벤트 바인딩 (연결시켜주는것)
+    on~ 이벤트구나. 인식
+
+
+    - document.querySelector('#heading');
+    ☆☆☆☆☆엘리먼트(element요소.h1 p 등등)에 접근하는 방법
+    document : 브라우저에서 생성되는 객체(object)
+
+    객체 : 속성, 동작(method)으로 이루어져 있다
+    -> 2가지로 표현이 가능하다. 속성(명사 담당) / method(동사 담당)
+
+    document한테 명령을 내렸는데,
+    .querySelector : 속성(명사 담당)
+    .querySelector('#heading') : method (☆소괄호가 보인다 = method호출☆ 메커니즘 중요)
+
+    -method 호출한것 앞에 =이 있다면?
+    오른쪽값을 복사하여 왼쪽에 준다.
+    값이 있다 = method 에서 어떤 값을 return해준다.
+
+    void함수 : return 값이 없다 document.querySelector('#heading'); (혼자 외롭게)
+    비void합수 : return 값이 있다 = document.querySelector('#heading'); (양옆에 무언가 붙었다)
+
+    .querySelector
+    query 질문하다
+    Selector 선택러
+
+    onclick(소괄호 없음. 속성) 속성에 function을 걸어줌(함수를 연결시켜줌) -> 그순간 method가 됨
+
+
+    querySelectorAll : 무조건 배열로 넘어옴 (처리방법이 달라짐)
