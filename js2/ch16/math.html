@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        Math.PI = 'aaa';
+        console.log(Math.PI);
+        console.log(Math.ceil(12,1)); // 올림
+        console.log(Math.round(12,1)); // 반올림
+        console.log(Math.round(12,5));
+        console.log(Math.floor(12,9)); // 내림
+        console.log(Math.random());
+        console.log(Math.random());
+
+        // // 0~9 랜덤한 숫자 만들어내고 싶다
+        // // const rVal = parseInt(Math.random() * 10); // 정수로(실수 날림)
+        // const rVal = Math.floor(Math.random() * 10); // 정수로(실수 날림)
+        // console.log(rVal);
+
+        // // 1~9
+        // let rVal2 = Math.floor(Math.random() * 9) + 1;
+
+        // 10~20
+
+
+        // const rVal3 = Math.floor(Math.random() * 11 ) +10;
+        // console.log(rVal3);
+
+        // // Math.floor(Math.random() * (max - min + 1)) + min
+        // const rVal4 = Math.floor(Math.random() * 26 ) +25;
+        // console.log(rVal4);
+
+
+
+
+        const rVal4 = Math.floor(Math.random() * 16 ) +25;
+        console.log(rVal4);
+
+        // while(true){
+        //     const val = Math.floor(Math.random() * 26 ) +25;
+            
+        //     if(val <1 || val >9){
+        //         console.log('잘못만듬');
+        //         break;
+        //     }
+        // }
+    </script>
+</body>
+</html>
+
+
+<!--
+
+
+    (최댓값-최소값+1) + 최소값
+
+
+    0나왔을때 최소값이 돼야하니까!
+    
+-->

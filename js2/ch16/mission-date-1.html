@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const now = new Date(); // 현재날짜정보
+        const writedDay = new Date('2022-05-26 13:27:00'); // 지정한날짜정보 (데이트 객체 2개)
+
+        // 1~59분 전 => 3,540 + 59초
+        // 1~23시간 전 => 82,800
+        // 1~15일 전 60 * 60 * 24 * 15 => 1,296,000
+        // 1~3달 전 => 60 * 60 * 24 * 3 => 7,776,000
+        // 이후는 날짜
+            function getPassedInfo(sDate, eDate) { //작성된시간(예전시간 숫자 더 작음), 현재시간(최신시간 무조건 숫자 더 큼)
+            const sDateMilSec = sDate.getTime();
+            const eDateMilSec = eDate.getTime();
+            const passedSec = (eDateMilSec - sDateMilSec) / 1000; // 지난 초 값
+
+            if(passedSec < 3599) { // 59분 59초전
+                const min = Math.floor(passedSec / 60); // 60초로 나누면 분이 나옴. 소수점 버림
+                return `${min}분 전`;
+            } else if (passedSec < 82800) {
+                const hour = Math.round(passedSec / 3600); // 60 초 * 60 = 1시간! 1시간을 초로 나누면
+                return `${hour}시간 전`;
+            } else if (passedSec < 1296000) { // 14일 23시 59분 59초로 하는것이 맞음 ( 3600 * 24시간. 1일을 초로 나누면!)
+                const date = Math.round(passedSec / 86400);
+                return `${date}일 전`;
+            } else if (passedSec < 7776000) {
+                const mon = Math.round(passedSec / 2592000); // 1일에서 30곱함. 대충한것. ()
+                return `${mon}달 전`;
+            } else {
+                const year = sDate.getFullYear();
+                const mon = fillZero(sDate.getMonth() + 1);
+                const date = fillZero(sDate.getDate());
+                return `${year}-${mon}-${date}`;
+            }
+        }
+        
+        function fillZero(val) { // 1월~9월 01 09 로 만드려고 씀. 10 11 12 그대로 뜨도록!
+            return ('0' + val).slice(-2);
+        }
+
+        const result = getPassedInfo(writedDay, now); // 예전시간(작성됐던) , 현재시간
+        console.log(result);
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>현재 시각</title>
+</head>
+<body>
+    <p>현재 시각 <span id="current" class="display"></span></p>
+    <script>
+        let cnt = 0;
+        setInterval(displayNow, 1000);
+        // setTimeout(displayNow, 0);
+
+        function displayNow() {
+            const now = new Date();
+            const currentTime = now.toLocaleTimeString("ko-Kr",{hour:"2-digit"});
+            document.querySelector('#current').innerTEXT = currentTime; 
+
+
+            // const hours = now.getHours();
+            // const min = now.getMinutes();
+            // const sec = now.getSeconds();
+
+
+            // document.querySelector('#current').innerHTML = currentTime;
+            
+            // let hours = today.getHours();
+            // let minutes = today.getMinutes();
+            // let seconds = today.getSeconds();
+
+            // document.write(`${firstDay.toLocaleString()}부터 현재까지 ${passedTime2}일이 지났습니다.`);
+
+            // document.querySelector('#current').innerHTML = "<b>안녕</b>";
+            // document.querySelector('#current').append = "<b>안녕</b>";
+        }
+    </script>
+</body>
+</html>
+
+<!--
+    
+    
+    setInterval
+    setTimeout 딱 한번만 콜백함수를 호출
+-->

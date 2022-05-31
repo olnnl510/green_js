@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const now = new Date(); // 객체의 주소값 저장 <- 메모리에 객체가 만들어지고 
+        const now2 = new Date();
+        now.myFn = function() {
+            alert('dd');
+        }
+        now.myFn();
+        document.write('현재 시각은 ' + now.getVarDate); // 객체의 주소값 -> 객체의 속성. 기능 이용
+
+    </script>
+</body>
+</html>
+
+<!--
+- 객체 : 클래서, 생성자 함수. {}
+
+stirng date객체
+피연산자 피연산자 = type이 다를때
+연산자를 만났을때 타입이 다르면? 형변환
+
+연산자를 만난 string? 무적.
+객체마저도 string으로 바꿔버림.
+
+문자열 + 문자열(now 객체가 string으로 바뀜)
+
+. = 객체에있는 기능을 준다.
+
+멤버 필드 (속성, 프로퍼티)
+멤버 메소드(메소드, 객체에 포함되어있는 함수)
+
+void함수 : return 값 x
+비void함수 : return 값 o
+
+. 멤버필드 or 메소드
+
+클래스) 멤버필드는 숨긴다.
+은닉화, 캡슐화
+외부에서 멤버필드를 직접 쓰기 or 읽기가 안되도록 하는것!
+
+- 둘 다 메소드 (메소드를 통해서 멤버필드 값..!@$#&%)
+getter
+멤버필드 값 가져올 수 있는것
+setter
+멤버필드 값 수정할 수 있는것
+
+유일하게 오픈되어 있는 멤버필드 : 상수 (어차피 값을 못바꾸기 때문에 오픈해놔도 괜찮음)
+
+0x = 16진수
+
+-->

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = [1, 2, 3, 4, 5, 4, 3, 2, 1];
+        const idx = arr.indexOf(3);
+        console.log(idx); // 2
+        // 배열에서 같은값을 찾아서 그 인덱스를 리턴 (왼쪽부터 먼저 찾음.)
+
+        const lastidx = arr.lastIndexOf(3);
+        console.log(lastidx); // 6
+
+        const fileNm = 'abcdef.fff.jpg'; // .의 인덱스값으로 짜르기 -> 확장자명 얻어오기
+        const lastDotIdx = fileNm.lastIndexOf('.');
+        console.log('lastDotIdx : ' + lastDotIdx); // 10
+
+        // ex) 배열에 3이 포함되어있는지 체크할때도 사용 (include)
+        // 없는 값 넣으면 -1 나옴.
+    </script>
+</body>
+</html>
+
+<!--
+.''.''.
+'.   .'
+  '.'
+
+.::.::.
+':::::'
+  ':'
+
+()()
+(^^)
+(><)
+-->
