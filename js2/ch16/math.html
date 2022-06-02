@@ -14,32 +14,30 @@
         console.log(Math.round(12,1)); // 반올림
         console.log(Math.round(12,5));
         console.log(Math.floor(12,9)); // 내림
-        console.log(Math.random());
+        console.log(Math.random()); // 1미만 0.00000~ 0.99999 절대 1이 안나옴
         console.log(Math.random());
 
-        // // 0~9 랜덤한 숫자 만들어내고 싶다
-        // // const rVal = parseInt(Math.random() * 10); // 정수로(실수 날림)
-        // const rVal = Math.floor(Math.random() * 10); // 정수로(실수 날림)
-        // console.log(rVal);
+        // 0~9 랜덤한 숫자 만들어내고 싶다
+        // const rVal = parseInt(Math.random() * 10); // 정수로(실수 날림)
+        const rVal = Math.floor(Math.random() * 10); // 정수로(실수 날림)
+        console.log(rVal);
 
-        // // 1~9
-        // let rVal2 = Math.floor(Math.random() * 9) + 1;
+        // 1~9
+        let rVal2 = Math.floor(Math.random() * 9) + 1;
 
         // 10~20
-
-
-        // const rVal3 = Math.floor(Math.random() * 11 ) +10;
+        const rVal3 = Math.floor(Math.random() * 11 ) +10;
         // console.log(rVal3);
 
-        // // Math.floor(Math.random() * (max - min + 1)) + min
-        // const rVal4 = Math.floor(Math.random() * 26 ) +25;
+        // ☆☆☆☆☆ Math.floor(Math.random() * (max - min + 1)) + min ☆☆☆☆☆
+
+        // 25~50
+        const rVal4 = Math.floor(Math.random() * 26 ) +25;
         // console.log(rVal4);
 
-
-
-
-        const rVal4 = Math.floor(Math.random() * 16 ) +25;
-        console.log(rVal4);
+        //25~40
+        const rVal5 = Math.floor(Math.random() * 16 ) +25;
+        // console.log(rVal5);
 
         // while(true){
         //     const val = Math.floor(Math.random() * 26 ) +25;

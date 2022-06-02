@@ -20,10 +20,13 @@
     <script>
         console.log('name : ' + window.name);
         const btnOpen = document.querySelector('#btnOpen');
-        let newWin = null;
+        let newWin = null; // 주소값이 없다는 뜻
 
         btnOpen.addEventListener('click', () => {
             newWin = open('notice.html', '알림', 'width=500, height=400');
+            if (newWin=== null) {
+                alert('차단을 풀어주세요!!!');
+            }
         });
 
         const btnClose = document.querySelector('#btnClose');
@@ -37,8 +40,10 @@
         }
 
         function moveWin() {
-            newWin.moveTo(0, 0);
+            newWin.moveTo(0, 0); // newWIn = null 이라서 에러 터짐
         }
     </script>
 </body>
 </html>
+
+<!-- null 인 상태에서 메소드 호출 -> 무조건 에러 -->

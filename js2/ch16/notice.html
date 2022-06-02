@@ -11,9 +11,9 @@
 
     <script>
         console.log(window.name);
-        opener.changeBack();
+        opener.changeBack(); // opener : 나를 연 부모 에 있는 method를 여기서도 호출 가능
 
-        let newWin = null;
+        // let newWin = null;
 
         const btnClose = document.querySelector('#btnClose');
         btnClose.addEventListener('click', () => {
@@ -22,3 +22,9 @@
     </script>
 </body>
 </html>
+
+<!--
+    
+    웹 화면을 -> 모바일 앱에서 뿌릴 수 있다
+
+-->

@@ -8,16 +8,19 @@
 </head>
 <body>
     <p>현재 시각 <span id="current" class="display"></span></p>
+    <button onclick="stopInter();">멈춰!!</button>
     <script>
         let cnt = 0;
-        setInterval(displayNow, 1000);
-        // setTimeout(displayNow, 0);
+        const interObj = setInterval(displayNow, 1000); // 1000밀리세컨드 간격으로 displayNow를 실행 ("1초마다" 콜백함수를 호출하겠다) 계속 반복해서 실행
+        setTimeout(displayNow, 1000); // 1초후 딱 "1번만" 호출하겠다
 
+        function stopInter() {
+            clearInterval(interObj);
+        }
         function displayNow() {
             const now = new Date();
-            const currentTime = now.toLocaleTimeString("ko-Kr",{hour:"2-digit"});
-            document.querySelector('#current').innerTEXT = currentTime; 
-
+            const currentTime = now.toLocaleTimeString();
+            document.querySelector('#current').innerHTML = currentTime; 
 
             // const hours = now.getHours();
             // const min = now.getMinutes();
