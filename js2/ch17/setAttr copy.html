@@ -45,8 +45,9 @@
 
         subImgs.forEach(item => {
             item.addEventListener('click', () => {
+                imgMain.setAttribute('src', item.getAttribute('src'));
                 // imgMain.src = item.src;
-                imgMain.src = this.src;
+                // imgMain.src = this.src;
             })
         });
 
