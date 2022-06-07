@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: none;
+            cursor: pointer;
+        }
+
+        .checked {
+            color: #ccc;
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>할 일 목록</h1>
+    <ul>
+        <li><span class="check">v할 일 1</span></li>
+        <li><span class="check">v할 일 2</span></li>
+        <li><span class="check">v할 일 3</span></li>
+        <li><span class="check">v할 일 4</span></li>
+        <li><span class="check">v할 일 5</span></li>
+    </ul>
+
+    <script>
+
+        const checkList = document.querySelectorAll('.check'); // 배열이 리턴됨. class 가 check 인 주소값이 배열로 리턴됨.
+
+        for (var i = 0; i < checkList.length; i++) {
+            checkList[i].addEventListener('click', function () {
+                // console.log(checkList[i]);
+                this.classList.toggle('checked');
+            })};
+
+        // ForEach 한테 함수 1개 보냄 (인자 1개 보냄)
+        // addEventListener 한테 인자 2개 보냄. ('click', (e)~~~~~함수)
+        // (e) : 이벤트 함수
+        // 만약에 classList() 이렇게 하면
+        // . 점 찍을 수 있을 때: 객체일때만 가능 ( 주소값. .속성 .메소드)
+
+        // checkList.forEach(item => {
+        //     item.addEventListener('click', (e) => {
+        //     e.target.classList.toggle('checked');
+        //     });
+        // });
+
+    </script>
+</body>
+
+</html>
+
+
+<!-- #ccc -->

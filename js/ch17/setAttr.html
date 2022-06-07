@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main { width: 500px; height: 300px; }
+        #main > img { width: 100%; }
+        #sub { width: 500px; height: 100px; display: flex; }
+        #sub > img { flex-grow: 1; }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <img src="https://i.picsum.photos/id/668/500/300.jpg?hmac=AW8K0gj9uyjAm6pNwcFcQ8iycFCzN6doL4MROna3YJ4">
+    </div>
+    <div id="sub">
+        <img src="https://i.picsum.photos/id/668/500/300.jpg?hmac=AW8K0gj9uyjAm6pNwcFcQ8iycFCzN6doL4MROna3YJ4">
+        <img src="https://i.picsum.photos/id/1029/500/300.jpg?hmac=eVIGXXfRthi6gqyIlKj-5vEn0KRnaUwCcUFhZi1wgXg">
+        <img src="https://i.picsum.photos/id/305/500/300.jpg?hmac=OLcz1VBLWWeA1lXKNgREsngR7CyjghZrI5AJCW9azAg">
+    </div>
+    <script>
+        const imgMain = document.querySelector('#main > img');
+
+        const subImgs = document.querySelectorAll('#sub > img');
+        subImgs.forEach(item => {
+            item.addEventListener('click', () => {
+                //imgMain.src = item.src;
+                imgMain.setAttribute('src', item.getAttribute('src'));
+            });
+        });
+    </script>
+</body>
+</html>

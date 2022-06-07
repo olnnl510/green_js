@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+        <h1>DOM을 공부합시다.</h1>
+        <a href="#" onclick="addP();">더보기</a> <!-- 한번밖에 실행 안되는 이유 this.onclick='';-->
+        <div id="info"></div>
+    </div>
+    <script>
+        let cnt = 1;
+        const divInfo = document.querySelector('#info');
+
+        function addP() {
+            if (divInfo.innerHTML === '') {
+
+
+                const newP = divInfo.appendChild(document.createElement('p')); // p div img
+
+                const newDiv = document.createElement('div'); // p div img
+                newDiv.innerText = 'div입니다.';
+                const txt = (`DOM은 document object model의 줄임말입니다. ${cnt++}`);
+                // const txtNode = document.createTextNode(txt);
+
+                // newP.appendChild(txtNode);
+                newP.append(txt, 'dddd', 'aaaa, newDiv');
+                // document.querySelector('#info').appendChild(newP); // 자식이 있었으면 뒤쪽에 붙여라
+            } else {
+                divInfo.innerHTML = '';
+            }
+        }
+    </script>
+</body>
+
+</html>
+
+<!--
+    appendChild : 뒤쪽으로 붙음 (문자열x 객체(element)만o)
+    append : 문자열o 객체o 둘다 들어갈 수 있음
+    prepend : 앞쪽으로 붙음
+-->

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type='number'] {
+            width: 50px;
+        }
+
+        table {
+            margin-top: 10px;
+            border-collapse: collapse;
+        }
+
+        tr, td {
+            border: 1px solid #cccf;
+        }
+
+        td {
+            padding: 5px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="number" id="rowNum">행
+        <input type="number" id="colNum">열
+        <button onclick="hello();">작성</button>
+        
+    </div>
+    <div id="result"></div>
+
+    <script>
+        const inputTable = document.querySelector('#result');
+        const inputrowNum = document.querySelector('#rowNum');
+        const inputcolNum = document.querySelector('#colNum');
+
+        
+        function hello() {
+            const x = inputrowNum.value;
+            const y = inputcolNum.value;
+            
+            // const newx = document.createElement('tr');
+            // const newy = document.createElement('td');
+
+            // newx.classList.add('parent');
+            // newy.classList.add('parent');
+
+            // newx.innerHTML = `<tr></tr>`;
+            // newy.innerHTML = `<td></td>`;
+
+            // inputTable.appendChild(newx);
+            // inputTable.appendChild(newy);
+
+            document.write("<table>");
+
+            for(let i = 0; i <= x; i++) {
+                document.write("<tr>");
+                    for(let z = 0; z <= y; z++) {
+                        document.write("<td>");
+                        document.write(i + "," + z);
+                        document.write("</td>");
+                    }
+                document.write("</tr>");
+            }
+
+            document.write("</table>");
+
+        };
+
+
+
+
+
+    function newReg() {
+            const txt = inputSubject.value; // <input type="text" id="subject"> 에 접근하는 주소값. 객체한테 접근하는건 "." 점이다
+            const newDiv = document.createElement('div');
+            newDiv.classList.add('parent');
+            newDiv.innerHTML = `
+            <div class="content">${txt}</div>
+            <div class="close c_pointer">X</div>
+            `;
+            divItemList.appendChild(newDiv);
+            const divClose = newDiv.querySelector('.close');
+            divClose.addEventListener('click', function() {
+                // newDiv.remove();
+                // divClose.parentElement.remove();
+                this.parentElement.remove(); // P태그 div태그만 가져옴. 텍스트노드 가져오지않음.
+                // this : 객체의 메모리에 있는 주소값이 상수로 들어가있음. 
+            });
+            inputSubject.value = '';
+        }
+
+    </script>
+</body>
+</html>
