@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var currentYear = 2022;
+        var birthYear;
+        var age;
+
+        birthYear = prompt('태어난 연도를 입력하세요.(YYYY)');
+
+        age = currentYear - parseInt(birthYear) +1 ;
+        
+        document.write(`${birthYear}년에 태어난 사람의 나이는 ${age}입니다.`);
+    </script>
+</body>
+</html>
+
+<!--
+정수 : (char), byte, short, int, long
+실수 : float, double
+
+숫자형
+문자열
+논리형
+
+배열
+객체
+
+undefined
+null
+
+
+typeof 함수 : 타입이 무슨 유형인지 string(문자열)으로 return해줌
+
+
+- 문자열 -> 숫자로 형변환
+parseInt()는 정수만
+Number()은 숫자 all
+
+parseInt()는 문자열로 된 부분에서 숫자(정수)만 뽑아서 변환해주는것이 특징이고,
+Number()은 문자열 전체가 숫자일때 소수점까지 숫자타입으로 가져올 수 있다는것이다.
+
+-->
