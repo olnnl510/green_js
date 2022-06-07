@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #heading {
+            color: blue;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="heading" class="heading">자바스크립트</h1>
+    <p id="text" class="heading" onclick="changeColor(this);">위 텍스트를 클릭해 보세요.</p>
+    <script>
+
+        function changeColor(target) {
+            target.style.color = 'red';
+        }
+        var heading = document.querySelector('#heading'); // document.querySelector 선택!
+        heading.style.color = 'blue';
+        console.log(heading.style.color);
+        // var heading = document.querySelectorAll('heading'); // 무조건 배열로 넘어옴
+        // var heading = document.getElementById('heading');
+        // var headingClassArr = document.getElementsByClassName('heading'); // 2개가 넘어옴
+
+        heading.onclick = function () {
+            this.style.color = 'red';
+            console.log(heading.style.color);
+        }
+
+        heading.onclick = function () {
+            this.style.color = 'pink';
+            console.log(heading.style.color);
+        }
+
+        heading.addEventListener('click', function () {
+            alert('클릭됐다.');
+        });
+
+        heading.addEventListener('click', function () {
+            alert('clicked');
+        });
+    </script>
+</body>
+
+</html>
+
+<!--
+var heading = document.querySelector('#heading'); // #id .class 태그
+var heading = document.getElementById('heading'); // id만
+
+1개 넘어옴
+
+
+
+
+- var heading = document.querySelector('#heading');
+비void함수. =가 있으므로 100%. 리턴값이 있으므로 복사하여 왼쪽에 준다.
+
+- 이벤트바인딩 (이벤트 연결) on~
+
+- this : 나자신 (여기서는 heading)
+
+= 최신화
+add 추가
+-->
