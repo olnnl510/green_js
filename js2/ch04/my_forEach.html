@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const myArr = {
+            '0': 10,
+            '1': 43,
+            '2': 22,
+            '3': 38,
+            '4': 17,
+            '5': 56,
+            '6': 47,
+            'length': 7,
+            'forEach': function(cb) { // 외부에서 콜백이 들어옴
+                for(let i=0; i<this.length; i++) { // 반복문에서 length만큼 콜백함수를 호출
+                    // const val = this[i];
+                    // cb(val, i); // 0 10 => ...
+                    cb(this[i], i);
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>
+
+
+<!--
+    
+    item idx 10 0번방
+
+
+
+                'forEach': function(cb) { // 외부에서 콜백이 들어옴
+                for(let i=0; i<this.length; i++) { // 반복문에서 length만큼 콜백함수를 호출
+                    const val = this[i];
+                    cb(val, i); // 0 10 => ...
+                }
+
+-->

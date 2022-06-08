@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = [10, 43, 22, 38, 17, 56, 47];
+        let sum = 0;
+        function fnSum(item) { // 이름있는 함수 만듦
+            sum += item;
+        }
+        arr.forEach(fnSum); // fnSum함수에 접근할 수 있는 주소값. 순차적으로 배열에 가지고 있는 값들을 하나씩 넣어줌.
+                            // 자기가 가지고있는 length 만큼 돔
+        console.log(`sum : ${sum}`);
+
+        console.log('----------');
+
+        let sum2 = 0;
+        arr.forEach(function(item){ // 바로 익명함수 만듦
+            sum2 += item;
+        });
+        console.log(`sum2 : ${sum2}`);
+
+        console.log('----------');
+        arr.forEach(function(item, idx) {
+            console.log(`arr[${idx}] : ${item}`);
+        });
+
+        console.log('----------');
+
+        arr.forEach(function(item, idx) {
+            if(item %2 === 0) {
+                console.log(`arr[${idx}] : ${item}`);
+            }
+        });
+
+
+        console.log('----------');
+        let sum_odd = 0;
+        arr.forEach(function(item, idx) {
+            if(item %2 === 1) {
+                sum_odd += item;
+            }
+        });
+        console.log(`홀수 전체 더함 : ${sum_odd}`);
+
+    </script>
+</body>
+</html>

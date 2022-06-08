@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function print(p1, p2, cb=hello) {
+            cb(p1, p2); // p2: 자리만 차지함. 무시당함.
+        }
+
+        function hello(nm) {
+            console.log(`Hi~~~ ${nm}`);
+        }
+
+        function goodbye(nm) {
+            console.log(`Bye~~~ ${nm}`);
+        }
+
+        print('홍길동');
+
+        print('윤정인', '1234', goodbye);
+    </script>
+</body>
+</html>
+
+
+<!-- 콜백함수 예제 -->
