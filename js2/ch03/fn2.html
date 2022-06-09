@@ -8,12 +8,13 @@
 </head>
 <body>
     <script>
-        function sum(n1, n2, n3) {
-            return n1 + n2 + n3;
+        function sum(n1, n2, n3=0, n4=0) {            
+            return n1 + n2 + n3 + n4;
         }
 
-        console.log(sum(1, 2)); // 숫자에 undefined 더하면 NaN 다
+        console.log(sum(1, 2));
         console.log(sum(1, 2, 3));
+        console.log(sum(1, 2, 3, 4));
     </script>
 </body>
 </html>
