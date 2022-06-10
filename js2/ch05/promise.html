@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function pMethhod(resolve, reject) { // 둘다 콜백함수 (밑에 괄호 보면..! promise가 넣어주는 콜백함수)
+            resolve('1111');
+        }
+        const p1 = new Promise(pMethhod); // 콜백함수를 인자로 받음
+
+
+        function resolveMethod(result) {
+            console.log(`resolveMethod : ${result}`);
+        }
+
+        function catchMethod(result) {
+            console.log(`catchMethod : ${result}`);
+        }
+
+        p1.then(resolveMethod); // 콜백함수 보내주는 이유 : 호출 하라고
+        p2.catch(catchMethod);
+    </script>
+</body>
+</html>
+
+<!-- 
+new
+
+생성자함수를
+new 해서
+필요한값을 보내주고
+객체를 만드는것. -->

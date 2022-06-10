@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            const myArr = {
+            '0': 10,
+            '1': 43,
+            '2': 22,
+            '3': 38,
+            '4': 17,
+            '5': 56,
+            '6': 47,
+            'length': 7,
+            'forEach': function(cb) { // 외부에서 콜백이 들어옴
+                for(let i=0; i<this.length; i++) { // 반복문에서 length만큼 콜백함수를 호출
+                    cb(this[i], i);
+                }
+            },
+            'map': function(cb) {
+                const tempArr = [];
+                for(let i=0; i<this.length; i++) {
+                    tempArr.push(cb(this[i], i));
+                }
+                return tempArr;
+            },
+            'filter' : function(cb) {
+                const filterArr = [];
+                for(let i=0; i<this.length; i++) {
+                    // const returnval = cb(this[i], i);// 클로저! this 쓰는것이 더 효율적
+                    // tempArr.push(returnval);
+                    // filterArr.push(cb(this[i]));// index를 보내면 안된다. 이유 : 0번방부터 차례대로 채워지는데, push를 할때 같이 보내면 비는방이 생김.
+
+                if(cb(this[i], i)) {
+                    filterArr.push(this[i]);
+                    }
+            }
+            return filterArr;
+        }
+    }
+
+
+        const arr2 = myArr.filter(function(item) {
+            // if(item % 2 === 0 ) {
+            //     return true;
+            // } else {
+            //     return false; // return false 는 안해줘도 됨.
+            // }
+            return item % 2 === 0;
+        });
+
+        console.log(myArr);
+        console.log(arr2.toString());
+
+    </script>
+</body>
+</html>

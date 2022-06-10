@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sum(n1, n2) {
+            let result = 0; // result : 버스
+            result = n1 + n2;
+            return result;
+        }
+        console.log(sum(10, 20));
+
+        function sum2(n1, n2) { // sum2는 서버한테 신호를 보내서 받은 신호를 찍고싶은 것. 10+20 = 30 을 찍고싶은것
+            let result = 0;
+            setTimeout(function() { // 안기다려줌
+                result =  n1 + n2;
+            }, 1000);
+            return result;
+        }
+        console.log(sum2(10,20));
+    </script>
+</body>
+</html>
+
+
+
+<!--
+
+동기 : 끝날 때 까지 기다려줌
+비동기 : 끝날 때 까지 안기다려줌. 마이웨이. 자바스크립트
+
+
+
+
+
+
+
+
+php,자바 동기
+
+동기/ 비동기 차이점
+
+실행주체 1개만 있다고 가정 -> 턴게임처럼 내가 움직이면 남은 못움직임
+
+컴퓨터 cpu 한개. 프로세서 여러개. 코어가 몇개 있다. 하나 하나가 실행할 수 있는 주체
+
+
+ex) cpu core 1개
+
+시분할처리 OS(윈도우에서 처리o)
+
+멀티 프로세싱
+
+멀티 스레딩 : 소프트웨어 입장
+
+
+
+
+자바스크립트 : 비동기
+
+스레드가 1개일지라도 여러명 움직일 수 있음
+-->

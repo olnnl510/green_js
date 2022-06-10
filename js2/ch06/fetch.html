@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const url = 'https://picsum.photos/v2/list';
+        fetch(url).then(function(res) {// 리턴해준는것 : promise
+            return res.json(); // res.json 가 promise 객체를 리턴해줌.
+        }). then(function(data) {
+            console.log(data);
+            
+
+            data.forEach(function(item) {
+                console.log(item);
+            });
+        });
+
+
+        // post 방식
+
+        // JSON 통신 최적화!!! (결과값들은 화면이 아니라, 데이터 처리)
+        //Restful API (CRUD) > 규칙!!! (주소값이 깔끔해짐!)
+        //get - select
+        //post - insert
+        //put - update
+        //delete - delete
+
+        /*
+
+        /board/write.php (get) 글쓰는 화면 열기
+        /board/write.php (post) 글 쓰기 처리
+
+        /board/list.php (get) 글 리스트 보기
+        /board/detail.php?i_board=4 (get) 글 읽기
+        /board/delete.php?i_board=4 (get/post) 글 삭제
+
+        /board/mod.php (get) 글 수정 화면 열기
+        /board/mod.php (post) 글 수정 처리
+
+        --------------------
+
+        /board (get) 글 리스트 데이터 가져오기
+        /board/1 (get) 글 디테일 데이터 가져오기 (뒤쪽 : PK값)
+        /board (delete) 글 삭제 처리
+        /board (put) 글 수정 처리
+        /board (post) 글 쓰기 처리
+
+
+        */
+    </script>
+</body>
+</html>
+
+
+
+
+
+<!-- 
+fetch('http://example.com/movies.json')
+  .then((response) => response.json()) // 호출 : 문자열로 넘어온것을 객체로 바꿔준다
+    .then((data) => console.log(data));
+
+
+
+화면 클릭했는데 문자열이 넘어옴.
+제이슨통신.
+
+에이작스 통신 왜 하는건가?
+화면의 특정부분만 백엔드에서 에이작스 통신과 교류를하고 그 부분만 뿌리는것
+
+-->

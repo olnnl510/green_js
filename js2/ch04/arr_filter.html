@@ -9,12 +9,13 @@
 <body>
     <script>
         const arr = [10, 43, 22, 38, 17, 56, 47];
-        const arr2 = arr.filter(function(item, idx) {
-            if(item % 2 === 0 ) {
-                return true;
-            } else {
-                return false;
-            }
+        const arr2 = arr.filter(function(item) {
+            // if(item % 2 === 0 ) {
+            //     return true;
+            // } else {
+            //     return false; // return false 는 안해줘도 됨.
+            // }
+            return item %2 === 0;
         });
         console.log(arr.toString());
         console.log(arr2.toString());
@@ -27,8 +28,6 @@
 
         console.log(arr3.toString());
 
-        
-
     </script>
 </body>
 </html>
@@ -36,6 +35,8 @@
 
 <!--
     - filter
+
+    거를 수 있다(늘어들수x 줄어들수o)
 
     내가 원하는 function을 가진 갯수만큼 호출.
     그때마다 값들을 보내줌.

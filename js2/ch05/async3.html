@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 콜백 지옥!
+        //1
+        setTimeout(function () {
+            console.log('A');
+
+            //2
+            setTimeout(function () {
+                console.log('B');
+
+                //3
+                setTimeout(function () {
+                    console.log('C');
+
+                    console.log('어쩌고 저쩌고');
+                }, 2000);
+
+            }, 2500);
+
+        }, 3000);    // 일부러 오래걸리는 작업 강제로 구현. 안기다려줌.
+
+
+    </script>
+</body>
+
+</html>
+
+
+
+<!--
+
+동기 : 끝날 때 까지 기다려줌
+비동기 : 끝날 때 까지 안기다려줌. 마이웨이. 자바스크립트
+
+
+
+
+
+
+
+
+php,자바 동기
+
+동기/ 비동기 차이점
+
+실행주체 1개만 있다고 가정 -> 턴게임처럼 내가 움직이면 남은 못움직임
+
+컴퓨터 cpu 한개. 프로세서 여러개. 코어가 몇개 있다. 하나 하나가 실행할 수 있는 주체
+
+
+ex) cpu core 1개
+
+시분할처리 OS(윈도우에서 처리o)
+
+멀티 프로세싱
+
+멀티 스레딩 : 소프트웨어 입장
+
+
+
+
+자바스크립트 : 비동기
+
+스레드가 1개일지라도 여러명 움직일 수 있음
+-->

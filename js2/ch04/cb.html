@@ -10,8 +10,8 @@
 
 <body>
     <script>
-        function calc(cb, n1, n2) {
-            return cb(n1, n2);
+        function calc(cb, n1, n2) { // 콜백함수 받음 (cb 네이밍 임의적)
+            return cb(n1, n2); // 외부에서 들어온 함수를 안에서 호출 (외부에서 들어온 값 그대로 전달)
         }
 
         function fnSum(n1, n2) {
@@ -43,7 +43,7 @@
         const r2 = calc(fnMulti, 10, 20);
         console.log(r2);
 
-        const r3 = calc(function (n1, n2) {
+        const r3 = calc(function (n1, n2) { // 익명함수
             return n1 - n2;
         }, 100, 20);
         console.log(r3);

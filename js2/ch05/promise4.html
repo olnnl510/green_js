@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // f1~f3은 통신! (통신한 결과값 이라고 생각)
+        // fn1 리턴값을 fn2에 전달
+        // fn2 리턴값을 fn3에 전달
+
+        function fn1() {
+            return new Promise(function(resolve) {
+                resolve(10);
+            });
+        }
+
+        function fn2(val) {
+            return new Promise(function(resolve) {
+                resolve(val * 2);
+            });
+        }
+
+        function fn3(val) {
+            return new Promise(function(resolve) {
+                resolve(val - 1);       
+            });
+        }
+
+        const p1 = fn1();
+        p1.then(function(result) {
+            fn2(result).then(function(result2) {
+                fn3(result2).then(function(result3) {
+                console.log(result3);
+                });
+            });
+        });
+        console.log('--------------------');
+
+        p1.then(function(result) {
+            return result;
+        }).then(function(result2) {
+            return fn2(result2);
+        }).then(function(result3) {
+            return fn3(result3);
+        }).then(function(result4) {
+            console.log(result4);
+        })
+    </script>
+</body>
+</html>
+
+<!-- 
+new
+
+생성자함수를
+new 해서
+필요한값을 보내주고
+객체를 만드는것.
+
+
+변수든 상수든
+.then
+.catch
+
+: promise 객체구나 생각.
+
+
+내가 리턴한 값으로 promise 객체를 만들고
+resolve에다가 내가 리턴한 값을 넣어줌
+
+-->

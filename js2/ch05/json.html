@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // XML은 장점이 없어요. (XML쓸 이유가 1도 없음)
+        // JSON (Javascript Object Notation)
+        // 자바스크립트에서 객체만들 때 사용하는 문법으로 데이터를 표현
+
+        const userVo_1 = { // userVo_1에 저장된것은 내 컴퓨터에 있는 주소값 (서버에 보내면 의미 없음. 서버와 내 컴퓨터의 메모리 주소체계는 다름. os가 랜덤하게 지정해주기 때문.)
+            'name': '신사임당',
+            'age' : 20,
+            'addr': '대구'
+        };
+
+        const userVo_2 = {
+            'name': '신사임당',
+            'age' : 22,
+            'addr': '진해'
+        };
+
+        console.log(userVo_1);
+        console.log(userVo_2);
+        console.log(userVo_1.addr);
+        console.log(userVo_1['addr']);
+        const json1 = JSON.stringify(userVo_1); // JSON 내장함수. 문자열로 바꿔줌. json형태로. 이 문자열을 서버로 전송함.
+        console.log(json1);
+        const obj = JSON.parse(json1);
+        console.log(obj);
+    </script>
+</body>
+</html>
+
+
+<!--
+    userVo_1에 저장된것은 내 컴퓨터에 있는 주소값
+    (서버에 보내면 의미 없음. 서버와 내 컴퓨터의 메모리 주소체계는 다름. os가 랜덤하게 지정해주기 때문.)
+
+    문자열로 변환해서 서버로 보내줘야함.
+
+    주소값 보내면 의미 없으므로 자료로 보냄 = 이때 json 을 씀. (xml 효율이 없음)
+-->

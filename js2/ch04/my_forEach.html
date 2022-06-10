@@ -17,15 +17,26 @@
             '5': 56,
             '6': 47,
             'length': 7,
-            'forEach': function(cb) { // 외부에서 콜백이 들어옴
+            'forEach': function(cb) { // 외부에서 콜백이 들어옴. 메소드가 됨.
                 for(let i=0; i<this.length; i++) { // 반복문에서 length만큼 콜백함수를 호출
                     // const val = this[i];
                     // cb(val, i); // 0 10 => ...
+                    // cb(this[i], i, this); // this : 나 자신의 주소값을 한번 더 보내줌.
                     cb(this[i], i);
                 }
             }
         }
+        let sum = 0;
+        function fnSum(item, idx, arr) { // 이름있는 함수 만듦
+            sum += item;
+        }
+        myArr.forEach(fnSum); // fnSum함수에 접근할 수 있는 주소값. 순차적으로 배열에 가지고 있는 값들을 하나씩 넣어줌. // 자기가 가지고있는 length 만큼 돔
+        console.log(myArr.length);
+        console.log(myArr[0]);
+        console.log(myArr[1]);
 
+        console.log(`my_sum : ${sum}`);
+        
     </script>
 </body>
 </html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 30px;
+      background-color: #f5f5f5;
+    }
+
+    .listing-card {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .listing-card li {
+      width: 100%;
+      background-color: #fff;
+      border: 1px solid #f0f0f0;
+
+    }
+
+    .listing-card li .img {
+      padding-top: 70%;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <ul id="list" class="listing-card">
+      <!-- <li>
+        <div class="img" style="background-image : url(``)"></div>
+        <div class="info">
+          <strong class="author">dasdfasdf</strong>
+        </div>
+      </li> -->
+    </ul>
+  </div>
+
+  <button onclick="getData();">데이터 가져오기</button>
+  <script>
+    let page = 1;
+    const ulList = document.querySelector('#list');
+    const backgroundImage = document.querySelector('.img');
+
+    function getData() {
+      console.log(`page : ${page}`);
+      const url = `https://picsum.photos/v2/list?limit=10&page=${page++}`;
+      // get 방식
+      fetch(url).then(function (res) {
+        return res.json();
+      }).then(function (data) { // then = promise
+        makeList(data);
+      });
+    };
+
+    function makeList(data) { // url 안에 있는 data를 돌린다.
+      data.forEach(function (item) {
+        const img = makePoster(item);
+        ulList.appendChild(img);
+      });
+      
+
+    };
+
+    function makePoster(item) { // li 부분이 리턴되도록!
+      
+      // 영롱 타임//
+      const li = document.createElement('li');
+      const div = document.createElement('div');
+      const div2 = document.createElement('div');
+      const strong = document.createElement('strong');
+      
+      div.classList.add('img');
+      div2.classList.add('info');
+      strong.classList.add('author');
+
+      li.appendChild(div);
+      li.appendChild(div2);
+      div2.appendChild(strong);
+
+      // let url = `https://picsum.photos/id/`;
+      // const id = item.id;
+      // const width = ~~(Number(item.width)*0.1);
+      // const height = ~~(Number(item.height)*0.1);
+      // url += `/${item.id}/${width}/${height}`;
+
+      // div.style.backgroundImage = `url('${url}')`;
+      // strong.innerText = item.author;
+
+
+
+      const width = ~~(Number(item.width)*0.1);
+      const height = ~~(Number(item.height)*0.1);
+
+      const id = item.id;
+      div.style.backgroundImage = `url('https://picsum.photos/id/${item.id}/${width}/${height}')`;
+      strong.innerText = item.author;
+
+
+
+
+    
+        // const li = document.createElement('li');
+        // // const div = document.createElement('div');
+
+        // let url = `https://picsum.photos/id/`;
+        // const id = item.id;
+        // const width = ~~(Number(item.width)*0.1);
+        // const height = ~~(Number(item.height)*0.1);
+        // url += `/${item.id}/${width}/${height}`;
+
+        // li.innerHTML=`
+        // <div class="img" style="background-image :url(${url});"></div>
+        //   <div class="info"><strong class="author">${item.author}</strong></div>`;
+
+     
+      // img.src = item.download_url;
+
+    
+
+      return li;
+    };
+
+    // 영화포스터
+
+
+    // post 방식
+    /*
+      Restful API(CRUD) > 규칙!!!
+      get - select
+      post - insert
+      put - update
+      delete - delete
+
+      /board/write.php (get) 글 쓰는 화면 열기
+      /board/write.php (post) 글 쓰기 처리
+
+      /board/list.php (get) 글 리스트 보기
+      /board/detail.php (get) 글 읽기
+      /board/delete.php (get/post) 글 삭제
+
+      /board/mod.php (get) 글 리스트 보기
+      /board/mod.php (post) 글 수정 처리
+
+      --------------------------------
+
+      ~~ 연산자 Math.floor() 와 동등하게 쓰이는 연산자
+      소수점을 버리는 용도로 쓰인다.
+
+
+    좌청룡 우백호 남주작 북현무 : 우백호-재훈 북현무-혜빈
+      ~ : tilde
+
+      ~~ : double tilde (메쓰플로우) = Math.floor
+    */
+
+  </script>
+</body>
+
+</html>
