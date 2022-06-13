@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id = "container"></div>
+    <script>
+        function elt(name, attr) {
+            const node = document.createElement(name);
+            if (attr) {
+                for (const item in attr) {
+                    if (attr.hasOwnProperty(item)) { // 원래 갖고있던 프로퍼티 맞니?
+                        node.setAttribute(item, attr[item]);
+                    }
+                }
+            }
+            return node;
+        }
+
+        const optionObj = {
+        'src': 'https://i.pinimg.com/222x/92/cf/8f/92cf8ff1decea0582a2e8b2473caac06.jpg',
+        alt: '하마'
+        };
+
+        const eleImg = elt('img', optionObj); // 호출 했기때문에. 첫번째 아규먼트 문자열img, 두번째 아규먼트 객체optionObj 함수로 보냄. 실행되는 과정!
+        console.log(eleImg);
+        const divContainer = document.querySelector('#container');
+        divContainer.appendChild(eleImg);
+    </script>
+</body>
+
+</html>
+
+
+<!-- 
+- in 연산자 : obj 가 가지고 있는 속성명을 하나씩 key로 줌
+객체의 속성명들로만 for문 돌리고 싶을 때 씀
+객체 안에 있는 key값 쪾쪾쪾 뽑아낼 때 씀
+
+elt : element 함수의 줄임말
+
+내가 만들고싶은애,
+그 태그에 넣고싶은 속성값 보내면
+만들어준다.
+-->

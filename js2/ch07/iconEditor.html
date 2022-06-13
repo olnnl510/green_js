@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function elt(name, attr) {
+            const node = document.createElement(name);
+            if (attr) {
+                for (const item in attr) {
+                    if (attr.hasOwnProperty(item)) { // 원래 갖고있던 프로퍼티 맞니?
+                        node.setAttribute(item, attr[item]);
+                    }
+                }
+            }
+            return node;
+        }
+
+        function createIconEditor(parent, nx, ny) {
+            // color input
+            const inputColor = elt('input', { type: 'color' });
+            parent.appendChild(inputColor);
+
+            // All clear Button
+            const btnAllClear = elt('input', { type: 'button', value: 'All clear' });
+            parent.appendChild(btnAllClear);
+
+            // Table Color Change Button
+            const btnTableColorChange = elt('input', { type: 'button', value: 'Table Color Change' });
+            parent.appendChild(btnTableColorChange);
+
+            //table
+            const table = elt('table');
+            parent.appendChild(table);
+
+            table.style.borderCollapse = 'collapse';
+            table.style.marginTop = '5px';
+
+
+
+            for (let i = 0; i < nx; i++) {
+                const tr = elt('tr');
+                table.appendChild(tr);
+
+                for (let z = 0; z < ny; z++) {
+                    const td = elt('td');
+                    tr.appendChild(td);
+                    td.style.width = td.style.height = '15px';
+                    td.style.border = '1px solid #000';
+                    // td.style.backgroundColor = inputColor.value;
+
+                    td.addEventListener('click', function removeEEEEE() {
+                        if(td.style.backgroundColor === '') {
+                            td.style.backgroundColor = inputColor.value
+                        } else {
+                            td.style.backgroundColor = '';
+                        }
+                    });
+                    
+
+                    
+
+
+
+
+                }
+            }
+
+
+
+
+            // tds.onclick= function() {
+            //     td.style.backgroundColor = inputColor.value;
+            //         }
+
+            // inputColor = document.querySelector('input[type=color]');
+
+        }
+        createIconEditor(document.body, 5, 10);
+    </script>
+</body>
+
+</html>
+
+
+<!--
+
+
+
+    
+                    클릭한 td 쿼리셀렉터 온클릭?????
+                    let clicked = document.querySelector(');
+-->

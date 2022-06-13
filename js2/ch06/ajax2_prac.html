@@ -87,18 +87,31 @@
     function makePoster(item) { // li 부분이 리턴되도록!
       
       // 영롱 타임//
-      const li = document.createElement('li');
-      const div = document.createElement('div');
-      const div2 = document.createElement('div');
-      const strong = document.createElement('strong');
-      
-      div.classList.add('img');
-      div2.classList.add('info');
-      strong.classList.add('author');
+      const li = document.createElement('li')
+      const div = document.createElement('div')
+      const div2 = document.createElement('div')
+      const strong = document.createElement('strong')
+
+      div.classList.add('img')
+      div2.classList.add('info')
+      strong.classList.add('author')
 
       li.appendChild(div);
       li.appendChild(div2);
       div2.appendChild(strong);
+
+
+      
+
+
+      // let url = `https://picsum.photos/id/`;
+      // const id = item.id;
+      // const width = ~~(Number(item.width)*0.1);
+      // const height = ~~(Number(item.height)*0.1);
+      // url += `/${item.id}/${width}/${height}`;
+
+      // div.style.backgroundImage = `url('${url}')`;
+      // strong.innerText = item.author;
 
       const width = ~~(Number(item.width)*0.1);
       const height = ~~(Number(item.height)*0.1);
@@ -106,6 +119,24 @@
       const id = item.id;
       div.style.backgroundImage = `url('https://picsum.photos/id/${item.id}/${width}/${height}')`;
       strong.innerText = item.author;
+
+        // const li = document.createElement('li');
+        // // const div = document.createElement('div');
+
+        // let url = `https://picsum.photos/id/`;
+        // const id = item.id;
+        // const width = ~~(Number(item.width)*0.1);
+        // const height = ~~(Number(item.height)*0.1);
+        // url += `/${item.id}/${width}/${height}`;
+
+        // li.innerHTML=`
+        // <div class="img" style="background-image :url(${url});"></div>
+        //   <div class="info"><strong class="author">${item.author}</strong></div>`;
+
+     
+      // img.src = item.download_url;
+
+    
 
       return li;
     };

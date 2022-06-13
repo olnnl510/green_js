@@ -29,7 +29,7 @@
       console.log(`page : ${page}`);
       const url = `https://picsum.photos/v2/list?limit=10&page=${page++}`;
       // get 방식
-      fetch(url).then(function (res) {
+      fetch(url).then(function (res) { // resolve
         return res.json();
       }).then(function (data) { // then = promise
         makeList(data);
@@ -85,6 +85,7 @@
       ~ : tilde
 
       ~~ : double tilde (메쓰플로우) = Math.floor
+
     */
 
   </script>
