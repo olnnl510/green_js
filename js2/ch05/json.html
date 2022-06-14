@@ -9,7 +9,7 @@
 <body>
     <script>
         // XML은 장점이 없어요. (XML쓸 이유가 1도 없음)
-        // JSON (Javascript Object Notation)
+        // JSON (Javascript Object Notation) : 문자열!
         // 자바스크립트에서 객체만들 때 사용하는 문법으로 데이터를 표현
 
         const userVo_1 = { // userVo_1에 저장된것은 내 컴퓨터에 있는 주소값 (서버에 보내면 의미 없음. 서버와 내 컴퓨터의 메모리 주소체계는 다름. os가 랜덤하게 지정해주기 때문.)
@@ -24,13 +24,13 @@
             'addr': '진해'
         };
 
-        console.log(userVo_1);
-        console.log(userVo_2);
-        console.log(userVo_1.addr);
-        console.log(userVo_1['addr']);
-        const json1 = JSON.stringify(userVo_1); // JSON 내장함수. 문자열로 바꿔줌. json형태로. 이 문자열을 서버로 전송함.
+        console.log(userVo_1); // 객체
+        console.log(userVo_2); // 객체
+        console.log(userVo_1.addr); // 객체 주소값.속성명 (저장되어 있는 값 뽑아낼 수 있음)
+        console.log(userVo_1['addr']); 
+        const json1 = JSON.stringify(userVo_1); // ☆ JSON 내장함수. 문자열로 바꿔줌. json형태로. 이 문자열을 서버로 전송함.
         console.log(json1);
-        const obj = JSON.parse(json1);
+        const obj = JSON.parse(json1); // ☆ json형태의 문자열 -> 객체로. 객체를 return해줌
         console.log(obj);
     </script>
 </body>
@@ -43,5 +43,26 @@
 
     문자열로 변환해서 서버로 보내줘야함.
 
-    주소값 보내면 의미 없으므로 자료로 보냄 = 이때 json 을 씀. (xml 효율이 없음)
+    객체, 배열 메모리 '주소값' 보내면 의미 없으므로 '자료'로 보냄 = 이때 json 을 씀. (xml 효율이 없음)
+    (서버의 메모리주소와 분리가 되어있으므로.. 미국에서 내 집주소는 의미가없음)
+
+
+
+    서버를 만들 수 있는 언어들은
+
+    Client      ====================>       Server
+    (Browser)   <====================       PHP Java C# 파이썬 JS ... 등
+    객체,배열   ====================>
+                자료표현 json 문자열로함(통신이름 에이작스라고 부름)
+
+    obj->str                                str->obj
+    배열->str                               srt->배열
+
+    객체 - 장점 : 분리가 가능하다. 따로따로 저장이 가능하다.
+    str : string문자열
+    통신할때 만 json형태의 문자열로 변환
+
+    속성은 무조건 "" 쌍따옴표
+    문자열도 "" 쌍따옴표
+    숫자형(정수)는 "" 없이!
 -->

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function fn1() {
+            return new Promise(function (resolve) {
+                resolve(10);
+                //reject(new Error('문제 발생'));
+            });
+        }
+
+        function fn2(val) {
+            return new Promise(function (resolve) {
+                setTimeout(function () {
+                    resolve(val * 2);
+                    // return val * 2;
+                }, 5000);
+            });
+        }
+
+        async function mainRun() {
+            let val1 = 0;
+            try {
+                const val1 = await fn1();
+                console.log(val1);
+            }
+            catch (e) {
+                console.log(e);
+            }
+            const val2 = await fn2(val1);
+            console.log(val2);
+        }
+
+        mainRun();
+    </script>
+</body>
+
+</html>
+<!-- 
+.then
+.catch
+대신
+
+async
+await
+
+무조건 함수 하나 필요.
+
+-await
+사용하려면 무조건 promise 객체여야함.
+promise 객체에서 resolve 호출한 값이 넘어옴.
+함수 안에서 사용해야하고 함수안에 async 키워드가 있어야 await 실행. (없으면 기능이 없어서 error)
+-->

@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-
-        function pMethhod(resolve, reject) { // 둘다 콜백함수 (밑에 괄호 보면..! promise가 넣어주는 콜백함수)
-            resolve('1111');
+        const success = true;
+        // const success = false;
+        // 1번째   2번째
+        function pMethhod(resolve, reject) { // 나자신도, 들어오는것도 둘다 콜백함수 (밑에 괄호 보면..! promise가 넣어주는 콜백함수)
+            if (success) {
+                resolve('1111'); // 주로 객체 or 배열
+            } else {
+                reject('2222'); // 주로 에러객체
+            }
         }
         const p1 = new Promise(pMethhod); // 콜백함수를 인자로 받음
 
@@ -23,10 +31,14 @@
             console.log(`catchMethod : ${result}`);
         }
 
-        p1.then(resolveMethod); // 콜백함수 보내주는 이유 : 호출 하라고
-        p2.catch(catchMethod);
+        p1
+        .then(resolveMethod) // 콜백함수 보내주는 이유 : 호출 하라고 (1번째)
+        .catch(catchMethod); // (2번째)
+
+        // p1.then(resolveMethod).catch(catchMethod);
     </script>
 </body>
+
 </html>
 
 <!-- 
@@ -35,4 +47,16 @@ new
 생성자함수를
 new 해서
 필요한값을 보내주고
-객체를 만드는것. -->
+객체를 만드는것.
+
+1. promise 객체부터 먼저 만든다.
+const p1 = new Promise();
+
+2. 안에 콜백한수를 보내줘야한다.
+const p1 = new Promise(pMethhod);
+
+만약에 resolve 를 호출했다면, then 메소드에 보낸 콜백함수가 실행됨
+만약에 reject 를 호출했다면, catch 메소드에 보낸 콜백함수가 실행됨
+
+
+-->

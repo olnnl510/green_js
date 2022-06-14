@@ -29,7 +29,7 @@
         console.log(obj1.hasOwnProperty('age')); // true뜸
         obj2.addr = '제주도';
         console.log(obj1.hasOwnProperty('addr')); // true뜸
-        // obj2.height = 182.2;
+        obj2.height = 182.2;
         console.log(obj2.height);
         console.log(obj1.hasOwnProperty('height')); // true뜸
 
@@ -41,6 +41,13 @@
 <!-- 상속받아서 쓰고 있는거냐
 진짜 니가 가지고 있는거냐
 
+상속받은것. 자기가 갖고있는게 아닌것 : false
 
-상속받은것 : false
+new로 객체 만든 친구들: proto타입 상속받음.
+
+hasOwnProperty : 부모에 있는거면 넣지마라!
+
+//false일 경우, 부모로 상속받은 경우, 자기 자신이 속성을 가지고 있지 않은 경우
+//true일 경우, 자기자신의 속성일 경우
+Thanks to 은지
 -->
