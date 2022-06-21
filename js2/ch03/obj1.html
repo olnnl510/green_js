@@ -8,31 +8,44 @@
 </head>
 <body>
     <script>
-        //생성자 함수!!! (객체 생성할 때 꼭 호출해야 하는 함수!!!)
+        // 생성자 함수!!! (객체 생성할 때 꼭 호출해야 하는 함수!!!) ☆ 객체지향에서 제일 중요
         function User(name, age) {
             this.name = name;
             this.age = age;
 
-            this.showMyName = function() {
+            this.showMyName = function () {
                 console.log(`나의 이름은 ${this.name}입니다.`);
             }
-            this.showMyAge = function() {
-                console.log(`나의 나이는 ${this.age}살입니다.`);
+            this.showMyage = function () {
+                console.log(`나의 나이는 ${this.age}살 입니다.`);
             }
         }
-        const user1 = new User('홍길동', 12);
+
+        const user1 = new User('홍길동', 12); // new 할 때 마다 새로운 객체가 메모리에 들어감.
         const user2 = new User('신사임당', 20);
-        
+
         user1.showMyName();
         user2.showMyName();
 
-        user1.age = 22; //은닉화가 안 된 상태!!
+        user1.age = 22 ; // 은닉화가 안 된 상태!!
 
-        user1.showMyAge();
-        user2.showMyAge();
+        user1.showMyage();
+        user2.showMyage();
         
-         
-
     </script>
 </body>
 </html>
+
+
+<!-- 
+    - 객체지향
+프로토타입
+class형
+
+    - 객체 : 값전달, 바운더리 만들때(숫자 등 묶을 때) ... 등 객체의 사용방법 무궁무진하다.
+
+    value object : 값 전달용으로 쓰는 객체
+    기능만 모아놓는 객체
+    값전달+ 기능
+
+-->
